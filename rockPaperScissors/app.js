@@ -13,11 +13,11 @@ function throwHand(playerSelection, computerSelection){
     if (playerSelection === computerSelection){
         choices.innerText = (`You threw ${playerSelection} and they threw ${computerSelection}`);
         scoreboard.innerText = (`It's a draw! Current score - Player: ${playerScore}, Computer: ${computerScore}`);
-    } else if (
-    (playerSelection === 'rock' && computerSelection === 'scissors') ||
+    } else if 
+    ((playerSelection === 'rock' && computerSelection === 'scissors') ||
     (playerSelection === 'paper' && computerSelection === 'rock') ||
-    (playerSelection === 'scissors' && computerSelection === 'paper')
-    ){
+    (playerSelection === 'scissors' && computerSelection === 'paper'))
+    {
         playerScore++;
         choices.innerText = (`You threw ${playerSelection} and they threw ${computerSelection}`);
         scoreboard.innerText = (`Current score - Player: ${playerScore}, Computer: ${computerScore}`);
@@ -36,9 +36,11 @@ function resetGame() {
 }
 function checkScorecard() {
     if(playerScore === 5) {
+        choices.innerText = ("Choose a move to play again!");
         scoreboard.innerText = (`Congratulations! You won!!! Final Scores - Player: ${playerScore}, Computer: ${computerScore}`);
         resetGame();
     } else if(computerScore === 5) {
+        choices.innerText = ("Choose a move to play again!");
         scoreboard.innerText = (`DEFEAT!!! Final Scores - Player: ${playerScore}, Computer: ${computerScore}`);
         resetGame();
     }
@@ -57,5 +59,4 @@ const throwScissors = document.querySelector("#scissors");
 throwRock.addEventListener("click", () => playGame("rock"));
 throwPaper.addEventListener("click", () => playGame("paper"));
 throwScissors.addEventListener("click", () => playGame("scissors"));
-
 
